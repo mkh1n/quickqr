@@ -1,0 +1,151 @@
+:root{
+    --red: #e76f51;
+    --orange: #f4a261;
+    --yellow: #f4a261;
+    --green: #2a9d8f;
+    --blue: #264653;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.main{
+    margin: 0 140px;
+}
+header{
+    margin: 10px 0 10px 0px;
+    padding: 8px 20px;
+    border: 1.2px solid #c7c7c7;
+    border-radius:30px ;
+}
+.logoHolder{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+#logoImage{
+    height: 20px;
+    margin-right: 5px;
+}
+.controls{
+    margin-bottom: 20px;
+    text-align: center;
+}
+.controlButton{
+    background-color: #eeeeee;
+    color: rgb(56, 56, 56);
+    border: none;
+    border-radius: 5px;
+    padding:  10px 12px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    margin: 5px 0;
+}
+.controlButton:hover{
+    background-color: #dfdfdf;
+}
+.banner{
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    padding: 10px 30px 10px 30px;
+    text-align: right;
+    color: white;
+}
+.banner h1{
+    margin: 0;
+}
+.generateBanner{
+    background-color: var(--green)
+}
+.forms{
+    margin: 0 auto;
+    max-width: 500px;
+    width: 90%;
+    margin-bottom: 40px;
+}
+.inputForm{
+    text-align: left;
+    position: relative;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hide;
+    max-height: 150px;
+    word-break: break-all;
+    padding: 15px 10px 15px 15px;
+}
+.formHolder{
+    padding-right: 44px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    border: 1px solid #c7c7c7;
+}
+.clear{
+    position: absolute;
+    right: 0px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.clear img{
+    width: inherit
+}
+.qrHolder{
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: 0 auto;
+    align-items: center;
+}
+.settings{
+    border-radius: 30px;
+    padding: 8px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: min-content;
+}
+.option{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin: 5px auto;
+    background-color: #264653;
+    cursor: pointer;
+
+}
+#myQRCode img{
+    height: 200px;
+    width: 200px;
+}
+.save{
+    height: 23px;
+    width: 23px;
+    background-size: contain;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border: 5px solid white;
+    border-radius: 100%;
+    padding: 8px;
+    margin: 5px auto;
+    cursor: pointer;
+
+}
+#savePng{
+    background-image: url('../images/icons/saveIcon.png');
+}
+#copyPng{
+    background-image: url('../images/icons/copyIcon.png');
+}

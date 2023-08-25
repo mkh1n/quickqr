@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR-Cat</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+
+</head>
+<body>
+    <div class="main">
+        <header>
+            <div class="logoHolder">
+                <img id="logoImage" src="images/icons/logoImage.png" alt="">
+                <div>QR-Cat<div>
+                
+            </div>
+        </header>
+        <div class="banner generateBanner">
+            <h1>Generate QR-Code</h1>
+            from text, link, and more
+
+        </div>
+        <div class="controls">
+            <button class="controlButton" id="url">URL</button>
+            <button class="controlButton" id="text">Text</button>
+            <button class="controlButton" id="sms">SMS</button>
+            <button class="controlButton" id="mail">Mail</button>
+            <button class="controlButton" id="phone">Phone</button>
+            <button class="controlButton" id="whatsapp">WhatsApp</button>
+            <button class="controlButton" id="wifi">WI-FI</button>
+        </div>
+        <div class="forms">
+            <div class='formHolder'id="urlForm">
+                <div class="inputBlock">
+                    <input class="inputForm" type="text" placeholder="Text">
+                    <div class="clear">
+                        <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="qrHolder">
+            <div class="settings">
+                <div class="option"></div>
+                <div class="option"></div>
+                <div class="option"></div>
+                <div class="option"></div>
+            </div>
+            <div id="myQRCode"></div> 
+            <div class="saveBlock">
+                <div class="save" id="savePng"></div>
+                <div class="save" id="copyPng"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src = "js/jquery-3.7.0.min.js"></script>
+    <script src = "js/jquery-qrcode.js" ></script>
+    <script src = "js/qr.js" ></script>
+</html>
