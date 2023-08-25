@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +9,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    
+
 
 </head>
+
 <body>
     <div class="main">
         <header>
             <div class="logoHolder">
                 <img id="logoImage" src="images/icons/logoImage.png" alt="">
                 <div>QR-Cat<div>
-                
-            </div>
+
+                    </div>
         </header>
         <div class="banner generateBanner">
             <h1>Generate QR-Code</h1>
@@ -35,31 +37,90 @@
             <button class="controlButton" id="wifi">WI-FI</button>
         </div>
         <div class="forms">
-            <div class='formHolder'id="urlForm">
+            <form class='formHolder'>
                 <div class="inputBlock">
-                    <input class="inputForm" type="text" placeholder="Text">
-                    <div class="clear">
+                    <input class="inputForm" type="text" placeholder="URL" id="urlInput"
+                        onkeyup="generateQr(this.value, currentType)">
+                    <button class="clear" type="reset">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
-                    </div>
+                    </button>
                 </div>
-            </div>
+            </form>
         </div>
         <div class="qrHolder">
             <div class="settings">
-                <div class="option"></div>
-                <div class="option"></div>
-                <div class="option"></div>
-                <div class="option"></div>
+                <div class="option" id="logoBtn" href="javascript:void(0);" tabindex="1">
+                    <div class="option-menu" id="logoMenu">
+                        <div class="option-item">
+                            <img src="images/logos/instagram.png" id ='test' alt="">
+                        </div>
+                        <div class="option-item" id="VK">
+                            <img src="images/logos/VK.png" alt="">
+                        </div>
+                        <div class="option-item" id="OK">
+                            <img src="images/logos/OK.png" alt="">
+                        </div>
+                        <div class="option-item" id="telegram">
+                            <img src="images/logos/telegram.png" alt="">
+                        </div>
+                        <div class="option-item" id="youtube">
+                            <img src="images/logos/youtube.png" alt="">
+                        </div>
+                        <div class="option-item" id="facebook">
+                            <img src="images/logos/facebook.png" alt="">
+                        </div>
+                        <div class="option-item" id="github">
+                            <img src="images/logos/github.png" alt="">
+                        </div>
+                        <div class="option-item" id="snapchat">
+                            <img src="images/logos/snapchat.png" alt="">
+                        </div>
+                        <div class="option-item" id="wi-fi">
+                            <img src="images/logos/wi-fi.png" alt="">
+                        </div>
+                        <div class="option-item" id="mail">
+                            <img src="images/logos/mail.png" alt="">
+                        </div>
+                        <div class="option-item" id="mail">
+                            <img src="images/logos/twitter.png" alt="">
+                        </div>
+                        <div class="option-item" id="mail">
+                            <img src="images/logos/linkedin.png" alt="">
+                        </div>
+                        <div class="option-item" id="mail">
+                            <img src="images/logos/whatsapp.png" alt="">
+                        </div>
+                        <div class="option-item" id="mail">
+                            <img src="images/logos/pinterest.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="option" id="sliderBtn" href="javascript:void(0);" tabindex="1">
+                    <div id="slider"><input type="range" min="0" max="50" value="0" oninput="changeRadius(this.value)">
+                    </div>
+
+                </div>
+
+                <div class="option colorHolder">
+                    <input type="color" value='#ffffff' id="qrBgColor" oninput="changeColor(this.value, this.id)" />
+                </div>
+
+                <div class="option colorHolder">
+                    <input type="color" value='#000000' id="qrFillColor" oninput="changeColor(this.value, this.id)" />
+
+                </div>
             </div>
-            <div id="myQRCode"></div> 
+            <div id="myQRCode"></div>
             <div class="saveBlock">
                 <div class="save" id="savePng"></div>
-                <div class="save" id="copyPng"></div>
+                <div class="save" id="copyPng"
+                    onclick="copyElementToClipboard(document.getElementById('myQRCode').firstChild)"></div>
             </div>
         </div>
     </div>
 </body>
-<script src = "js/jquery-3.7.0.min.js"></script>
-    <script src = "js/jquery-qrcode.js" ></script>
-    <script src = "js/qr.js" ></script>
+<script src="js/jquery-3.7.0.min.js"></script>
+<script src="js/jquery-qrcode.js"></script>
+<script src="js/qr.js"></script>
+
 </html>

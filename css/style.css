@@ -100,7 +100,10 @@ header{
     width: 30px;
     height: 30px;
     top: 50%;
+    border: none;
+    background-color: #fff;
     transform: translate(-50%, -50%);
+    cursor: pointer;
 }
 .clear img{
     width: inherit
@@ -125,11 +128,87 @@ header{
     margin: 5px auto;
     background-color: #264653;
     cursor: pointer;
+    position: relative;
+}
+.option.colorHolder{
+    overflow: hidden;
+    border: solid 1.3px #c7c7c7;
 
 }
-#myQRCode img{
-    height: 200px;
-    width: 200px;
+#qrBgColor, #qrFillColor{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: -28px;
+    bottom: -16px;
+    border-radius: 100%;
+    cursor: pointer;
+    border: none;
+}
+.option-menu{
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 300px;
+    flex-wrap: wrap;
+    background-color: #dfdfdf;
+    padding: 10px;
+    border-radius: 20px;
+    left:65px;
+    top: -20%;
+    transition: 0.3s;
+}
+#slider{
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    height: 50px;
+    background-color: #dfdfdf;
+    padding: 0px 10px ;
+    border-radius: 20px;
+    left:14px;
+    top: 50%;
+    transition: 0.3s;
+    transform: rotate(-90deg);
+}
+#logoBtn{
+    background-color: unset;
+    background-size: contain;
+    background-image: url('../images/logos/telegram.png'); 
+}
+#logoBtn:focus  #logoMenu, 
+#logoBtn:active  #logoMenu, 
+#logoMenu:hover 
+{ 
+    opacity: 1;
+    pointer-events:fill;
+} 
+
+#sliderBtn:focus  #slider, 
+#sliderBtn:active  #slider, 
+#slider:hover 
+{ 
+    opacity: 1;
+    pointer-events:inherit;
+} 
+.option-item{
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+    transition: 0.2s;
+}
+.option-item:hover{
+    filter: brightness(0.8);
+}
+.option-item img{
+    height: inherit;
+}
+
+#myQRCode canvas{
+    height: 300px !important;
+    width: 300px !important;
 }
 .save{
     height: 23px;
