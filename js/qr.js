@@ -74,21 +74,31 @@ const generateQr = (data, type) => {
             data = !geo ? currentData : `geo:${geo}`
             makeQr(data)
             break;
-    }
+        case 'wi-fi':
+            var networkName = document.querySelectorAll('input[type=networkName]')[0].value
+            var password = document.querySelectorAll('input[type=password]')[0].value
+            var encryption = document.querySelectorAll('select[type=encryption]')[0].value == 'No encryption' ? 'nopass' : document.querySelectorAll('select[type=encryption]')[0].value.split('/')[0]
+           
+            data = !networkName ? currentData : `WIFI:T:${encryption};S:${networkName};P:${password};;`
+            console.log(data)
+            makeQr(data)
+        break;
+}
 }
 const changeType = (type) => {
     currentType = type;
     console.log(type + 'Form')
     typeList.forEach((el) => {
         document.getElementById(el + 'Form').style.display = 'none'
+        document.getElementById(el).style.outline = 'none'
     })
     document.getElementById(type + 'Form').style.display = 'block'
+    document.getElementById(type).style.outline = '2px solid var(--orange)'
 }
 const changeRadius = (radius) => {
     changes += 1
     defaultSettings['radius'] = radius / 100
     generateQr(currentData, currentType)
-    document.getElementById('sliderIcon').style.borderRadius = String(radius / 1.4) + '%'
 }
 const changeColor = (color, id) => {
     changes += 1
@@ -138,18 +148,28 @@ const deleteAll = () => {
     hideDeleteAllBtn()
     changes = 0
 }
-document.getElementById('urlForm').style.display = 'block'
 var forms = document.getElementsByClassName('inputForm');
 
-Array.from(forms).forEach(link => {
-    link.addEventListener('keyup', function (event) {
+Array.from(forms).forEach(form => {
+    form.addEventListener('keyup', function () {
         generateQr(this.value, currentType)
     });
 });
+
 async function copyElement() {
     const response = await fetch(document.getElementById('myQRCode').firstChild.getAttribute('src'));
     const blob = await response.blob()
     await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob})])
-  }
+    document.getElementById('copyAlert').classList.add('alertAnimation')
+    setTimeout(() => {    document.getElementById('copyAlert').classList.remove('alertAnimation')}, 2000);
+}
+
+
+
+document.getElementById('url').style.outline = '2px solid var(--orange)'
+document.getElementById('urlForm').style.display = 'block'
 generateQr(currentData, currentType)
 
+document.getElementById('myQRCode').firstChild.addEventListener('click', function () {
+    copyElement()
+});

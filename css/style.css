@@ -14,19 +14,13 @@ body{
 }
 .main{
     margin: 0 140px;
-}
-header{
-    margin: 10px 0 10px 0px;
-    padding: 8px 20px;
-    border: 1.2px solid #c7c7c7;
-    border-radius:30px ;
+    box-sizing:border-box;
 }
 .logoHolder{
     display: flex;
     align-items: center;
     font-size: 20px;
     font-weight: bold;
-
 }
 #logoImage{
     height: 20px;
@@ -41,12 +35,12 @@ header{
     color: rgb(56, 56, 56);
     border: none;
     border-radius: 5px;
-    padding:  10px 12px;
+    padding:  6px 10px;
     font-family: 'Poppins', sans-serif;
-    font-weight: bold;
+    font-weight: 400;
     cursor: pointer;
     transition: 0.2s;
-    margin: 5px 0;
+    margin: 5px 3px;
 }
 .controlButton:hover{
     background-color: var(--strongGray);
@@ -58,17 +52,17 @@ header{
     justify-content: center;
     flex-direction: column;
     border-radius: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
     box-sizing: border-box;
-    padding: 10px 30px 10px 30px;
+    padding: 20px 30px 20px 30px;
     text-align: right;
     color: white;
+    background-color: var(--green)
+
 }
 .banner h1{
     margin: 0;
-}
-.generateBanner{
-    background-color: var(--green)
 }
 .forms{
     margin: 0 auto;
@@ -93,8 +87,16 @@ header{
     font-size: 15px;
 }
 .inputBlock{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
 }
+select{
+    appearance: none;
+
+}
+
 .formHolder{
     display: none;
     padding-right: 44px;
@@ -153,7 +155,7 @@ header{
 }
 .option.colorHolder{
     overflow: hidden;
-    border: solid 1.3px #c7c7c7;
+    border: solid 1.5px var(--strongGray);
 }
 .changedOption{
     height: 7px;
@@ -210,14 +212,7 @@ header{
     transition: 0.3s;
     transform: rotate(-90deg);
 }
-#sliderIcon{
-    height: 20px;
-    width: 20px;
-    background-color: #000000;
-    margin: auto;
-    position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
-}
+
 #logoBtn{
     background-color: unset;
     background-size: contain;
@@ -231,8 +226,11 @@ header{
     pointer-events:fill;
 } 
 #sliderBtn{
-    background-color: var(--orange);
-    border: solid 1.3px #c7c7c7;
+    background-color: unset;
+    background-size: contain;
+    background-position: center;
+    background-image: url('../images/icons/tilda.png');
+    border: solid 1.5px var(--strongGray);
 
 }
 #sliderBtn:focus  #slider, 
@@ -280,8 +278,16 @@ header{
 }
 
 #myQRCode img{
-    height: 300px !important;
-    width: 300px !important;
+    height: 280px !important;
+    width: 280px !important;
+    transition: 0.2s;
+    border-radius: 20px;
+    cursor: pointer;
+}
+#myQRCode img:hover{
+    transform: scale(1.003);
+    box-shadow: rgba(151, 151, 164, 0.2) 0px 7px 29px 0px;
+
 }
 .save{
     height: 23px;
@@ -295,6 +301,7 @@ header{
     cursor: pointer;
     transition: 0.2s;
 }
+
 .save:hover{
     transform: scale(1.01);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
@@ -307,4 +314,105 @@ header{
 .save a img{
     height: 100%;
     width: 100%;
+}
+.goDownSection{
+    margin-top: 60px;
+
+    position: relative;
+    height:170px;
+}
+.goDownBtn{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-position: center;
+    background-size: cover;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    cursor: pointer;
+    opacity: 0.5;
+    background-image: url('../images/icons/down.png');
+}
+#copyAlert{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 200px;
+    background-color:#1fd081;
+    border-radius: 10px;
+    position: fixed;
+    bottom:25px;
+    margin: auto;
+    left:0;
+    right:0;
+    opacity: 0;
+    transition: 2s;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+}
+.alertAnimation{
+    animation-duration: 2s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+  0% {
+    transform:translatey(800%);
+
+  }
+  30%{
+    transform:translatey(0%);
+    opacity: 1;
+  }
+  70%{
+    transform:translatey(0%);
+    opacity: 1;
+  }
+  to {
+    transform:translatey(800%);
+    opacity: 0;
+  }
+}
+.infoSection{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;font-size: 15px;
+}
+.infoCard{
+    padding: 20px 30px;
+    border-radius: 30px;
+    max-width: 300px;
+    background-color: var(--blue);
+    color: white;
+    margin: 10px;
+}
+.infoCard h2{
+    margin: 0px 10px 10px 0px;
+}
+.info1{
+    color: black;
+    max-width: 200px;
+    background-color: var(--red);
+}
+.info2{
+    color: black;
+
+    max-width: 400px;
+    background-color: var(--orange);
+}
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    margin-top: 40px;
+    background-color: var(--blue);
+    color: white;
+    font-weight: 300;
+}
+ a{
+    color: var(--red)
 }

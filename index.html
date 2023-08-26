@@ -8,26 +8,24 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="main">
-        <header>
-            <div class="logoHolder">
-                <img id="logoImage" src="images/icons/logoImage.png" alt="">
-                <div>QR-Cat<div>
 
-                    </div>
-        </header>
         <div class="banner generateBanner">
+            <div class="logoHolder">
+                <img id="logoImage" src="images/icons/logoImageWhite.png" alt="">
+                <div>QR-Cat</div>
+
+            </div>
             <h1>Generate QR-Code</h1>
             from text, link, and more
 
         </div>
         <div class="controls">
-            <button class="controlButton" id="url" onclick="changeType(this.id)">URL</button>
+            <button class="controlButton" id="url" onclick="changeType(this.id) ">URL</button>
             <button class="controlButton" id="text" onclick="changeType(this.id)">Text</button>
             <button class="controlButton" id="sms" onclick="changeType(this.id)">SMS</button>
             <button class="controlButton" id="mail" onclick="changeType(this.id)">Mail</button>
@@ -54,15 +52,13 @@
             </form>
             <form class='formHolder ' id="smsForm">
                 <div class="inputBlock">
-                    <input class="inputForm" type="smsNumber" placeholder="+1 234 567 8910" 
-                        >
+                    <input class="inputForm" type="smsNumber" placeholder="+1 234 567 8910">
                     <button class="clear" type="reset">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
                     </button>
                 </div>
                 <div class="inputBlock">
-                    <input class="inputForm" type="smsMessage" placeholder="Message" 
-                        >
+                    <input class="inputForm" type="smsMessage" placeholder="Message">
                     <button class="clear" type="reset">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
                     </button>
@@ -70,22 +66,19 @@
             </form>
             <form class='formHolder' id="mailForm">
                 <div class="inputBlock">
-                    <input class="inputForm" type="mail" placeholder="example@gmail.com" 
-                        >
+                    <input class="inputForm" type="mail" placeholder="example@gmail.com">
                     <button class="clear" type="reset">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
                     </button>
                 </div>
                 <div class="inputBlock">
-                    <input class="inputForm" type="mailSubject" placeholder="Subject" 
-                        >
+                    <input class="inputForm" type="mailSubject" placeholder="Subject">
                     <button class="clear" type="reset">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
                     </button>
                 </div>
                 <div class="inputBlock">
-                    <input class="inputForm" type="mailMessage" placeholder="Message" 
-                        >
+                    <input class="inputForm" type="mailMessage" placeholder="Message">
                     <button class="clear" type="reset">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
                     </button>
@@ -93,8 +86,7 @@
             </form>
             <form class='formHolder' id="phoneForm">
                 <div class="inputBlock">
-                    <input class="inputForm" type="phone" placeholder="+1 234 567 8910" 
-                        >
+                    <input class="inputForm" type="phone" placeholder="+1 234 567 8910">
                     <button class="clear" type="reset">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
                     </button>
@@ -110,12 +102,22 @@
             </form>
             <form class='formHolder' id="wi-fiForm">
                 <div class="inputBlock">
-                    <input class="inputForm" type="wi-fi" placeholder="Network Name" 
-                        >
+                    <input class="inputForm" type="networkName" placeholder="Network Name">
                     <button class="clear" type="reset">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
                     </button>
                 </div>
+                <div class="inputBlock">
+                    <input class="inputForm" type="password" placeholder="Passwors">
+                    <button class="clear" type="reset">
+                        <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
+                    </button>
+                </div>
+                <select class="inputForm" type="encryption" oninput="generateQr(this.value, currentType)">
+                    <option class="">No encryption</option>
+                    <option атрибуты>WEP</option>
+                    <option атрибуты>WPA/WPA2</option>
+                </select>
             </form>
         </div>
         <div class="qrHolder">
@@ -162,49 +164,90 @@
                         <div class="option-item" id="mail">
                             <img src="images/logos/linkedin.png" alt="">
                         </div>
+                        <div class="option-item" id="mail1">
+                            <img src="images/logos/mail1.png" alt="">
+                        </div>
+                        <div class="option-item" id="skype">
+                            <img src="images/logos/skype.png" alt="">
+                        </div>
                         <div class="option-item" id="mail">
                             <img src="images/logos/telegram.png" alt="">
                         </div>
                         <div class="option-item" id="mail">
                             <img src="images/logos/pinterest.png" alt="">
                         </div>
+                        <div class="option-item" id="messenger">
+                            <img src="images/logos/messenger.png" alt="">
+                        </div>
+                        <div class="option-item" id="twitch">
+                            <img src="images/logos/twitch.png" alt="">
+                        </div>
+                        <div class="option-item" id="viber">
+                            <img src="images/logos/viber.png" alt="">
+                        </div>
+                        <div class="option-item" id="location">
+                            <img src="images/logos/location.png" alt="">
+                        </div>
+                        <div class="option-item" id="location1">
+                            <img src="images/logos/location1.png" alt="">
+                        </div>
 
                     </div>
                 </div>
                 <div class="option" id="sliderBtn" href="javascript:void(0);" tabindex="1">
-                    <div id="sliderIcon"></div>
-                    <div id="slider"><input type="range" min="0" max="50" value="0" oninput="changeRadius(this.value)">
+                    <div id="slider"><input type="range" min="0" max="50" value="0" onchange="changeRadius(this.value)">
                     </div>
 
                 </div>
 
                 <div class="option colorHolder">
-                    <input type="color" value='#ffffff' id="qrBgColor" oninput="changeColor(this.value, this.id)" />
+                    <input type="color" value='#ffffff' id="qrBgColor" onblur="changeColor(this.value, this.id)" />
 
                 </div>
 
                 <div class="option colorHolder">
-                    <input type="color" value='#000000' id="qrFillColor" oninput="changeColor(this.value, this.id)" />
+                    <input type="color" value='#000000' id="qrFillColor" onblur="changeColor(this.value, this.id)" />
                 </div>
                 <div id="deleteAll" onclick="deleteAll()"></div>
             </div>
             <div id="myQRCode"></div>
             <div class="saveBlock">
                 <div class="save" id="savePng">
-                    <a id='savePngLink'href="#" download><img src="images/icons/saveIcon.png" alt=""></a>
+                    <a id='savePngLink' href="#" download><img src="images/icons/saveIcon.png" alt=""></a>
                 </div>
-                <div class="save" id="copyPng"
-                    onclick="copyElement()"></div>
-            </div>  
-
+                <div class="save" id="copyPng" onclick="copyElement()"></div>
+            </div>
         </div>
+        <div id="copyAlert">Copied!</div>
+        <div class="goDownSection">
+            <a class="goDownBtn" href="#info"></a>
+        </div>
+        <section class="infoSection" id="info">
+            <div class="infoCard info2">
+                <h2>Logos</h2>
+                Add a logo to your QR code for convenient sending to your friends and colleagues, you can also copy or
+                download the QR code in high quality.
+            </div>
+            <div class="infoCard info1">
+                <h2>Your Design</h2>
+                You choose the design yourself, you can change the pixel smoothing radius, background color and fill
+            </div>
+            <div class="infoCard ">
+                <h2>Appreciate</h2>
+                This site uses the jquery plugin <a href="https://github.com/lrsjng/jquery-qrcode" target="_blank">jquery-qrcode</a>, many thanks to the authors of this project for the free opportunity to generate QR codes with such ease
+            </div>
+        </section>
+
     </div>
+    <footer>Made with ♥️ by<a href="https://github.com/mkh1n/qr-cat" target="_blank"> mkh1n</a></footer>
 </body>
 <div>
-  </div>
+</div>
 <script src="js/jquery-3.7.0.min.js"></script>
 <script src="js/jquery-qrcode.js"></script>
 <script src="js/qr.js"></script>
+<script src="js/scroll.js"></script>
+
 
 
 </html>
