@@ -9,8 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-
+    
 </head>
 
 <body>
@@ -33,14 +32,13 @@
             <button class="controlButton" id="sms" onclick="changeType(this.id)">SMS</button>
             <button class="controlButton" id="mail" onclick="changeType(this.id)">Mail</button>
             <button class="controlButton" id="phone" onclick="changeType(this.id)">Phone</button>
-            <button class="controlButton" id="whatsapp" onclick="changeType(this.id)">WhatsApp</button>
+            <button class="controlButton" id="maps" onclick="changeType(this.id)">Maps</button>
             <button class="controlButton" id="wi-fi" onclick="changeType(this.id)">WI-FI</button>
         </div>
         <div class="forms">
             <form class='formHolder' id="urlForm">
                 <div class="inputBlock">
-                    <input class="inputForm" type="url" placeholder="https://" 
-                        onkeyup="generateQr(this.value, currentType)">
+                    <input class="inputForm" type="url" placeholder="https://">
                     <button class="clear" type="reset">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
                     </button>
@@ -48,8 +46,7 @@
             </form>
             <form class='formHolder ' id="textForm">
                 <div class="inputBlock">
-                    <input class="inputForm" type="text" placeholder="Text" 
-                        onkeyup="generateQr(this.value, currentType)">
+                    <input class="inputForm" type="text" placeholder="Text">
                     <button class="clear" type="reset">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
                     </button>
@@ -58,14 +55,14 @@
             <form class='formHolder ' id="smsForm">
                 <div class="inputBlock">
                     <input class="inputForm" type="smsNumber" placeholder="+1 234 567 8910" 
-                        onkeyup="generateQr(this.value, currentType)">
+                        >
                     <button class="clear" type="reset">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
                     </button>
                 </div>
                 <div class="inputBlock">
                     <input class="inputForm" type="smsMessage" placeholder="Message" 
-                        onkeyup="generateQr(this.value, currentType)">
+                        >
                     <button class="clear" type="reset">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
                     </button>
@@ -74,21 +71,21 @@
             <form class='formHolder' id="mailForm">
                 <div class="inputBlock">
                     <input class="inputForm" type="mail" placeholder="example@gamil.com" 
-                        onkeyup="generateQr(this.value, currentType)">
+                        >
                     <button class="clear" type="reset">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
                     </button>
                 </div>
                 <div class="inputBlock">
                     <input class="inputForm" type="mailSubject" placeholder="Subject" 
-                        onkeyup="generateQr(this.value, currentType)">
+                        >
                     <button class="clear" type="reset">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
                     </button>
                 </div>
                 <div class="inputBlock">
                     <input class="inputForm" type="mailMessage" placeholder="Message" 
-                        onkeyup="generateQr(this.value, currentType)">
+                        >
                     <button class="clear" type="reset">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
                     </button>
@@ -97,23 +94,15 @@
             <form class='formHolder' id="phoneForm">
                 <div class="inputBlock">
                     <input class="inputForm" type="phone" placeholder="+1 234 567 8910" 
-                        onkeyup="generateQr(this.value, currentType)">
+                        >
                     <button class="clear" type="reset">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
                     </button>
                 </div>
             </form>
-            <form class='formHolder' id="whatsappForm">
+            <form class='formHolder' id="mapsForm">
                 <div class="inputBlock">
-                    <input class="inputForm" type="whatsappNumber" placeholder="+1 234 567 8910" 
-                        onkeyup="generateQr(this.value, currentType)">
-                    <button class="clear" type="reset">
-                        <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
-                    </button>
-                </div>
-                <div class="inputBlock">
-                    <input class="inputForm" type="whatsappMessage" placeholder="Message" 
-                        onkeyup="generateQr(this.value, currentType)">
+                    <input class="inputForm" type="maps" placeholder="40.71872,-73.98905">
                     <button class="clear" type="reset">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
                     </button>
@@ -122,7 +111,7 @@
             <form class='formHolder' id="wi-fiForm">
                 <div class="inputBlock">
                     <input class="inputForm" type="wi-fi" placeholder="Network Name" 
-                        onkeyup="generateQr(this.value, currentType)">
+                        >
                     <button class="clear" type="reset">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
                     </button>
@@ -146,8 +135,8 @@
                         <div class="option-item" id="OK">
                             <img src="images/logos/OK.png" alt="">
                         </div>
-                        <div class="option-item" id="telegram">
-                            <img src="images/logos/telegram.png" alt="">
+                        <div class="option-item" id="whatsapp">
+                            <img src="images/logos/whatsapp.png" alt="">
                         </div>
                         <div class="option-item" id="youtube">
                             <img src="images/logos/youtube.png" alt="">
@@ -174,7 +163,7 @@
                             <img src="images/logos/linkedin.png" alt="">
                         </div>
                         <div class="option-item" id="mail">
-                            <img src="images/logos/whatsapp.png" alt="">
+                            <img src="images/logos/telegram.png" alt="">
                         </div>
                         <div class="option-item" id="mail">
                             <img src="images/logos/pinterest.png" alt="">
@@ -201,15 +190,18 @@
             </div>
             <div id="myQRCode"></div>
             <div class="saveBlock">
-                <div class="save" id="savePng"></div>
+                <div class="save" id="savePng">
+                    <a id='savePngLink'href="#" download><img src="images/icons/saveIcon.png" alt=""></a>
+                </div>
                 <div class="save" id="copyPng"
                     onclick="copyElementToClipboard(document.getElementById('myQRCode').firstChild)"></div>
-            </div>
+            </div>  
         </div>
     </div>
 </body>
 <script src="js/jquery-3.7.0.min.js"></script>
 <script src="js/jquery-qrcode.js"></script>
 <script src="js/qr.js"></script>
+
 
 </html>

@@ -1,3 +1,4 @@
+
 const defaultSettings = {
     radius: 0,
     render: 'canvas',
@@ -16,15 +17,21 @@ const typeList = [
     'sms',
     'mail',
     'phone',
-    'whatsapp',
+    'maps',
     'wi-fi'
 ]
 var currentType = 'url'
 var currentData = 'Hello, World!'
 var changes = 0
-
-const generateQr = (data, type) => {
+const makeQr = (data) => {
     $("#myQRCode").empty()
+    $("#myQRCode").qrcode(
+        { ...defaultSettings, 'text': data }
+    );
+    var link = document.getElementById('myQRCode').firstChild.toDataURL("image/png")
+    document.getElementById('savePngLink').setAttribute('href', link);
+}
+const generateQr = (data, type) => {
     if (changes >= 1) {
         showDeleteAllBtn()
     } else {
@@ -32,15 +39,40 @@ const generateQr = (data, type) => {
     }
     switch (type) {
         case 'url':
-            data = !document.querySelector('input').value ? currentData : document.querySelector('input').value
-            $("#myQRCode").qrcode(
-                { ...defaultSettings, text: data }
-            );
-            console.log({ ...defaultSettings, text: data })
+            var url = document.querySelectorAll('input[type=url]')[0].value
+            data = !url ? currentData : url
+            makeQr(data)
+            break;
+        case 'text':
+            var txt = document.querySelectorAll('input[type=text]')[0].value
+            data = !txt ? currentData : txt
+            makeQr(data)
+            break;
+        case 'sms':
+            var number = document.querySelectorAll('input[type=smsNumber]')[0].value
+            var message = document.querySelectorAll('input[type=smsMessage]')[0].value
+            data = !number ? currentData : `smsto:${number}:${message}`
+            makeQr(data)
 
             break;
+        case 'mail':
+            var mail = document.querySelectorAll('input[type=mail]')[0].value
+            var subject = document.querySelectorAll('input[type=mailSubject]')[0].value
+            var mailmessage = document.querySelectorAll('input[type=mailMessage]')[0].value
+            data = !mail ? currentData : `mailto:${mail}?subject=${subject}&body=${mailmessage}`
+            makeQr(data)
 
-        default:
+            break;
+        case 'phone':
+            var phone = document.querySelectorAll('input[type=phone]')[0].value
+
+            data = !phone ? currentData : `tel:${phone.trim()}`
+            makeQr(data)
+            break;
+        case 'maps':
+            var geo = document.querySelectorAll('input[type=maps]')[0].value
+            data = !geo ? currentData : `geo:${geo}`
+            makeQr(data)
             break;
     }
 }
@@ -50,8 +82,7 @@ const changeType = (type) => {
     typeList.forEach((el) => {
         document.getElementById(el + 'Form').style.display = 'none'
     })
-    document.getElementById(type + 'Form').style.display = 'block' 
-
+    document.getElementById(type + 'Form').style.display = 'block'
 }
 const changeRadius = (radius) => {
     changes += 1
@@ -83,7 +114,7 @@ document.querySelectorAll('.option-item').forEach(btn => {
 const deleteLogo = () => {
     changes -= 1
     defaultSettings['image'] = 'none'
-    defaultSettings['mode'] = 0
+    defaultSettings['mode'] = 4
     defaultSettings['ecLevel'] = `L`;
     document.getElementById('deleteLogo').style.display = `none`;
     document.getElementById('logoBtn').style.backgroundImage = "url(images/logos/telegram.png)";
@@ -107,6 +138,14 @@ const deleteAll = () => {
     hideDeleteAllBtn()
     changes = 0
 }
-document.getElementById('urlForm').style.display = 'block' 
+document.getElementById('urlForm').style.display = 'block'
+var forms = document.getElementsByClassName('inputForm');
+
+Array.from(forms).forEach(link => {
+    link.addEventListener('keyup', function (event) {
+        generateQr(this.value, currentType)
+    });
+});
 
 generateQr(currentData, currentType)
+
