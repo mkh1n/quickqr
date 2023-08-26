@@ -1,7 +1,7 @@
 
 const defaultSettings = {
     radius: 0,
-    render: 'canvas',
+    render: 'image',
     size: 1000,
     ecLevel: 'L',
     fill: '#000000',
@@ -28,7 +28,7 @@ const makeQr = (data) => {
     $("#myQRCode").qrcode(
         { ...defaultSettings, 'text': data }
     );
-    var link = document.getElementById('myQRCode').firstChild.toDataURL("image/png")
+    var link = document.getElementById('myQRCode').firstChild.getAttribute('src')
     document.getElementById('savePngLink').setAttribute('href', link);
 }
 const generateQr = (data, type) => {
@@ -146,6 +146,10 @@ Array.from(forms).forEach(link => {
         generateQr(this.value, currentType)
     });
 });
-
+async function copyElement() {
+    const response = await fetch(document.getElementById('myQRCode').firstChild.getAttribute('src'));
+    const blob = await response.blob()
+    await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob})])
+  }
 generateQr(currentData, currentType)
 

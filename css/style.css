@@ -87,9 +87,10 @@ header{
     overflow-x: hide;
     max-height: 150px;
     word-break: break-all;
-    padding: 15px 10px 15px 15px;
+    padding: 10px 8px 10px 8px;
     background: var(--softGray);
     margin: 5px;
+    font-size: 15px;
 }
 .inputBlock{
     position: relative;
@@ -278,7 +279,7 @@ header{
     cursor: pointer;
 }
 
-#myQRCode canvas{
+#myQRCode img{
     height: 300px !important;
     width: 300px !important;
 }
