@@ -28,18 +28,100 @@
 
         </div>
         <div class="controls">
-            <button class="controlButton" id="url">URL</button>
-            <button class="controlButton" id="text">Text</button>
-            <button class="controlButton" id="sms">SMS</button>
-            <button class="controlButton" id="mail">Mail</button>
-            <button class="controlButton" id="phone">Phone</button>
-            <button class="controlButton" id="whatsapp">WhatsApp</button>
-            <button class="controlButton" id="wifi">WI-FI</button>
+            <button class="controlButton" id="url" onclick="changeType(this.id)">URL</button>
+            <button class="controlButton" id="text" onclick="changeType(this.id)">Text</button>
+            <button class="controlButton" id="sms" onclick="changeType(this.id)">SMS</button>
+            <button class="controlButton" id="mail" onclick="changeType(this.id)">Mail</button>
+            <button class="controlButton" id="phone" onclick="changeType(this.id)">Phone</button>
+            <button class="controlButton" id="whatsapp" onclick="changeType(this.id)">WhatsApp</button>
+            <button class="controlButton" id="wi-fi" onclick="changeType(this.id)">WI-FI</button>
         </div>
         <div class="forms">
-            <form class='formHolder'>
+            <form class='formHolder' id="urlForm">
                 <div class="inputBlock">
-                    <input class="inputForm" type="text" placeholder="URL" id="urlInput"
+                    <input class="inputForm" type="url" placeholder="https://" 
+                        onkeyup="generateQr(this.value, currentType)">
+                    <button class="clear" type="reset">
+                        <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
+                    </button>
+                </div>
+            </form>
+            <form class='formHolder ' id="textForm">
+                <div class="inputBlock">
+                    <input class="inputForm" type="text" placeholder="Text" 
+                        onkeyup="generateQr(this.value, currentType)">
+                    <button class="clear" type="reset">
+                        <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
+                    </button>
+                </div>
+            </form>
+            <form class='formHolder ' id="smsForm">
+                <div class="inputBlock">
+                    <input class="inputForm" type="smsNumber" placeholder="+1 234 567 8910" 
+                        onkeyup="generateQr(this.value, currentType)">
+                    <button class="clear" type="reset">
+                        <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
+                    </button>
+                </div>
+                <div class="inputBlock">
+                    <input class="inputForm" type="smsMessage" placeholder="Message" 
+                        onkeyup="generateQr(this.value, currentType)">
+                    <button class="clear" type="reset">
+                        <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
+                    </button>
+                </div>
+            </form>
+            <form class='formHolder' id="mailForm">
+                <div class="inputBlock">
+                    <input class="inputForm" type="mail" placeholder="example@gamil.com" 
+                        onkeyup="generateQr(this.value, currentType)">
+                    <button class="clear" type="reset">
+                        <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
+                    </button>
+                </div>
+                <div class="inputBlock">
+                    <input class="inputForm" type="mailSubject" placeholder="Subject" 
+                        onkeyup="generateQr(this.value, currentType)">
+                    <button class="clear" type="reset">
+                        <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
+                    </button>
+                </div>
+                <div class="inputBlock">
+                    <input class="inputForm" type="mailMessage" placeholder="Message" 
+                        onkeyup="generateQr(this.value, currentType)">
+                    <button class="clear" type="reset">
+                        <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
+                    </button>
+                </div>
+            </form>
+            <form class='formHolder' id="phoneForm">
+                <div class="inputBlock">
+                    <input class="inputForm" type="phone" placeholder="+1 234 567 8910" 
+                        onkeyup="generateQr(this.value, currentType)">
+                    <button class="clear" type="reset">
+                        <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
+                    </button>
+                </div>
+            </form>
+            <form class='formHolder' id="whatsappForm">
+                <div class="inputBlock">
+                    <input class="inputForm" type="whatsappNumber" placeholder="+1 234 567 8910" 
+                        onkeyup="generateQr(this.value, currentType)">
+                    <button class="clear" type="reset">
+                        <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
+                    </button>
+                </div>
+                <div class="inputBlock">
+                    <input class="inputForm" type="whatsappMessage" placeholder="Message" 
+                        onkeyup="generateQr(this.value, currentType)">
+                    <button class="clear" type="reset">
+                        <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
+                    </button>
+                </div>
+            </form>
+            <form class='formHolder' id="wi-fiForm">
+                <div class="inputBlock">
+                    <input class="inputForm" type="wi-fi" placeholder="Network Name" 
                         onkeyup="generateQr(this.value, currentType)">
                     <button class="clear" type="reset">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
@@ -51,9 +133,13 @@
             <div class="settings">
                 <div class="option" id="logoBtn" href="javascript:void(0);" tabindex="1">
                     <div class="option-menu" id="logoMenu">
-                        <div class="option-item">
-                            <img src="images/logos/instagram.png" id ='test' alt="">
+                        <div class="option-delete" id="deleteLogo" onclick="deleteLogo()">
+                            <img src="images/icons/delete.png" alt="">
                         </div>
+                        <div class="option-item">
+                            <img src="images/logos/instagram.png" id='test' alt="">
+                        </div>
+
                         <div class="option-item" id="VK">
                             <img src="images/logos/VK.png" alt="">
                         </div>
@@ -93,9 +179,11 @@
                         <div class="option-item" id="mail">
                             <img src="images/logos/pinterest.png" alt="">
                         </div>
+
                     </div>
                 </div>
                 <div class="option" id="sliderBtn" href="javascript:void(0);" tabindex="1">
+                    <div id="sliderIcon"></div>
                     <div id="slider"><input type="range" min="0" max="50" value="0" oninput="changeRadius(this.value)">
                     </div>
 
@@ -103,12 +191,13 @@
 
                 <div class="option colorHolder">
                     <input type="color" value='#ffffff' id="qrBgColor" oninput="changeColor(this.value, this.id)" />
+
                 </div>
 
                 <div class="option colorHolder">
                     <input type="color" value='#000000' id="qrFillColor" oninput="changeColor(this.value, this.id)" />
-
                 </div>
+                <div id="deleteAll" onclick="deleteAll()"></div>
             </div>
             <div id="myQRCode"></div>
             <div class="saveBlock">
