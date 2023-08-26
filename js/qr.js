@@ -161,6 +161,8 @@ async function copyElement() {
     const blob = await response.blob()
     await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob})])
     document.getElementById('copyAlert').classList.add('alertAnimation')
+    document.getElementById('copyAlert').style.pointerEvents = 'none'
+
     setTimeout(() => {    document.getElementById('copyAlert').classList.remove('alertAnimation')}, 2000);
 }
 
