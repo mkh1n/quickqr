@@ -161,9 +161,13 @@ async function copyElement() {
     const blob = await response.blob()
     await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob})])
     document.getElementById('copyAlert').classList.add('alertAnimation')
-    document.getElementById('copyAlert').style.pointerEvents = 'none'
+    document.getElementById('copyPng').style.pointerEvents = 'none'
+    document.getElementById('myQRCode').firstChild.style.pointerEvents = 'none'
 
-    setTimeout(() => {    document.getElementById('copyAlert').classList.remove('alertAnimation')}, 2000);
+    setTimeout(() => {
+        document.getElementById('copyAlert').classList.remove('alertAnimation')
+        document.getElementById('copyPng').style.pointerEvents = 'all'
+        document.getElementById('myQRCode').firstChild.style.pointerEvents = 'all'}, 2000);
 }
 
 
