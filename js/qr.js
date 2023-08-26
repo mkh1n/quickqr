@@ -70,7 +70,7 @@ const generateQr = (data, type) => {
             makeQr(data)
             break;
         case 'maps':
-            var geo = document.querySelectorAll('input[type=maps]')[0].value
+            var geo = document.querySelectorAll('input[type=maps]')[0].value.trim()
             data = !geo ? currentData : `geo:${geo}`
             makeQr(data)
             break;
