@@ -23,11 +23,15 @@ const typeList = [
 var currentType = 'url'
 var currentData = 'Hello, World!'
 var changes = 0
+
 const makeQr = (data) => {
     $("#myQRCode").empty()
     $("#myQRCode").qrcode(
         { ...defaultSettings, 'text': data }
     );
+    document.getElementById('myQRCode').firstChild.addEventListener('click', function () {
+        copyElement()
+    });    
     var link = document.getElementById('myQRCode').firstChild.getAttribute('src')
     document.getElementById('savePngLink').setAttribute('href', link);
 }
