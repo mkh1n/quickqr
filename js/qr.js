@@ -124,14 +124,16 @@ document.querySelectorAll('.option-item').forEach(btn => {
         defaultSettings['image'] = btn.children[0]
         document.getElementById('logoBtn').style.backgroundImage = `url(${btn.children[0].src})`;
         document.getElementById('deleteLogo').style.display = `block`;
+        hideMenu()
         generateQr(currentData, currentType)
-        document.getElementById('logoBtn').blur()
-        document.getElementById('logoMenu').classList.add('pointerEventsNone')
-        setTimeout(() => {
-            console.log('kkk')
-            document.getElementById('logoMenu').classList.remove('pointerEventsNone')}, 10);
     });
 });
+const hideMenu = () => {
+    document.getElementById('logoBtn').blur()
+    document.getElementById('logoImage').click()
+}
+
+
 const deleteLogo = () => {
     changes -= 1
     defaultSettings['image'] = 'none'

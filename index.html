@@ -129,7 +129,7 @@
             <div class="settings">
                 <div class="option" id="logoBtn" href="javascript:void(0);" tabindex="1">
                     <div class="option-menu" id="logoMenu">
-                        <div class="option-delete" id="deleteLogo" onclick="deleteLogo()">
+                        <div class="option-delete" id="deleteLogo" onclick="deleteLogo(); hideMenu()">
                             <img src="images/icons/delete.png" alt="">
                         </div>
                         <div class="option-item">
@@ -200,7 +200,7 @@
                     </div>
                 </div>
                 <div class="option" id="sliderBtn" href="javascript:void(0);" tabindex="1">
-                    <div id="slider"><input type="range" min="0" max="50" value="0" onchange="changeRadius(this.value)">
+                    <div id="slider"><input type="range" min="0" max="50" value="0" onchange="changeRadius(this.value); hideMenu()">
                     </div>
 
                 </div>

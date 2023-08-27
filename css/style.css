@@ -195,6 +195,18 @@ select{
     backdrop-filter: blur(7px);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+
+#logoBtn{
+    background-color: unset;
+    background-size: contain;
+    background-image: url('../images/logos/telegram.png'); 
+}
+#logoBtn:focus  #logoMenu, 
+#logoBtn:active  #logoMenu
+{ 
+    opacity: 1;
+    pointer-events:inherit;
+} 
 .option-menu::-webkit-scrollbar { width: 0; }
 #slider{
     display: flex;
@@ -211,22 +223,6 @@ select{
     transform: rotate(-90deg);
 }
 
-#logoBtn{
-    background-color: unset;
-    background-size: contain;
-    background-image: url('../images/logos/telegram.png'); 
-}
-#logoBtn:focus  #logoMenu, 
-#logoBtn:active  #logoMenu, 
-#logoMenu:hover 
-{ 
-    opacity: 1;
-    pointer-events:inherit;
-} 
-.pointerEventsNone{
-    pointer-events:none;
-
-}
 #sliderBtn{
     background-color: unset;
     background-size: contain;
