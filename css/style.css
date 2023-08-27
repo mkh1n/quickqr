@@ -186,15 +186,14 @@ select{
     height: 213px;
     overflow-y: scroll;
     flex-wrap: wrap;
-    background-color: #dfdfdfef;
+    background-color: var(--softGray);
     padding: 5px;
     border-radius: 20px;
     right:65px;
     top: -30%;
     transition: 0.3s;
     backdrop-filter: blur(7px);
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;}
 
 #logoBtn{
     background-color: unset;
@@ -214,7 +213,7 @@ select{
     pointer-events: none;
     position: absolute;
     height: 50px;
-    background-color: #dfdfdf;
+    background-color: var(--softGray);
     padding: 0px 10px ;
     border-radius: 20px;
     right:14px;
@@ -473,7 +472,7 @@ footer{
         width: 183px;
         left: -9px;
         top: 55px;
-        height: 156px;
+        height: 184px;
     }
     .option:hover{
         transform: scale(1.03)  rotate(90deg);
