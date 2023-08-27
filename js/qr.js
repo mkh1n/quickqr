@@ -128,9 +128,8 @@ document.querySelectorAll('.option-item').forEach(btn => {
         document.getElementById('logoBtn').blur()
         document.getElementById('logoMenu').classList.add('pointerEventsNone')
         setTimeout(() => {
-            document.getElementById('logoMenu').classList.remove('pointerEventsNone')}
-            ,10);
-        
+            console.log('kkk')
+            document.getElementById('logoMenu').classList.remove('pointerEventsNone')}, 10);
     });
 });
 const deleteLogo = () => {
