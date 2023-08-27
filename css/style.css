@@ -221,7 +221,7 @@ select{
 #logoMenu:hover 
 { 
     opacity: 1;
-    pointer-events:fill;
+    pointer-events:inherit;
 } 
 #sliderBtn{
     background-color: unset;

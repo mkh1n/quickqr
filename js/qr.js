@@ -117,12 +117,11 @@ const changeColor = (color, id) => {
 
 document.querySelectorAll('.option-item').forEach(btn => {
     btn.addEventListener("click", () => {
-        document.getElementById('logoMenu').style.pointerEvents = 'none';
-        document.body.focus()
+        document.getElementById('logoBtn').blur()
+        document.getElementById('logoMenu').style.pointerEvents = 'none'
         setTimeout(() => {
-            document.getElementById('logoMenu').style.pointerEvents = 'all';
-           }, 1);
-
+            document.getElementById('logoMenu').style.pointerEvents = 'full'
+        }, 2000);
         changes += 1
         defaultSettings['ecLevel'] = 'H'
         defaultSettings['mSize'] = 0.2
@@ -131,6 +130,7 @@ document.querySelectorAll('.option-item').forEach(btn => {
         document.getElementById('logoBtn').style.backgroundImage = `url(${btn.children[0].src})`;
         document.getElementById('deleteLogo').style.display = `block`;
         generateQr(currentData, currentType)
+        
     });
 });
 const deleteLogo = () => {
