@@ -127,9 +127,7 @@ document.querySelectorAll('.option-item').forEach(btn => {
         generateQr(currentData, currentType)
         document.getElementById('logoBtn').blur()
         document.getElementById('logoMenu').style.pointerEvents = 'none'
-        setTimeout(() => {
             document.getElementById('logoMenu').style.pointerEvents = 'inherit'
-        }, 20);
     });
 });
 const deleteLogo = () => {
