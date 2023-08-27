@@ -223,6 +223,10 @@ select{
     opacity: 1;
     pointer-events:inherit;
 } 
+.pointerEventsNone{
+    pointer-events:none;
+
+}
 #sliderBtn{
     background-color: unset;
     background-size: contain;
