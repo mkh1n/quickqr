@@ -49,13 +49,12 @@ body{
 .banner{
     height: 120px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
     border-radius: 15px;
     margin-bottom: 20px;
     margin-top: 10px;
-    box-sizing: border-box;
-    padding: 20px 30px 20px 30px;
+    padding: 15px 20px;
     text-align: right;
     color: white;
     background-color: var(--green)
@@ -81,7 +80,7 @@ body{
     overflow-x: hide;
     max-height: 150px;
     word-break: break-all;
-    padding: 10px 8px 10px 8px;
+    padding: 10px 8px;
     background: var(--softGray);
     margin: 5px;
     font-size: 15px;
@@ -151,7 +150,6 @@ select{
 }
 .option:hover{
     transform: scale(1.03);
-
 }
 .option.colorHolder{
     overflow: hidden;
@@ -278,8 +276,8 @@ select{
 }
 
 #myQRCode img{
-    height: 280px !important;
-    width: 280px !important;
+    height: 280px ;
+    width: 280px ;
     transition: 0.2s;
     border-radius: 20px;
     cursor: pointer;
@@ -305,7 +303,6 @@ select{
 .save:hover{
     transform: scale(1.01);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-
 }
 #copyPng{
     background-image: url('../images/icons/copyIcon.png');
@@ -333,8 +330,13 @@ select{
     cursor: pointer;
     opacity: 0.5;
     background-image: url('../images/icons/down.png');
+    transition: 0.1s;
+}
+.goDownBtn:hover{
+    transform: translateY(3px);
 }
 #copyAlert{
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -383,7 +385,7 @@ select{
 }
 .infoCard{
     padding: 20px 30px;
-    border-radius: 30px;
+    border-radius: 15px;
     max-width: 300px;
     background-color: var(--blue);
     color: white;
@@ -415,4 +417,102 @@ footer{
 }
  a{
     color: var(--red)
+}
+@media screen and (max-width: 700px) {
+    .main{
+        margin: 0 40px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .main {
+        margin: 0 11px;
+    }
+    .banner{
+        height: 79px;
+        margin-bottom: 10px;
+    }
+    .banner p{
+        font-size: 12px;
+        margin: 0;
+    }
+    .banner h1{
+        font-size: 20px;
+    }
+    #myQRCode img{
+        height: 200px ;
+        width: 200px ;
+    }
+    .forms{
+        margin-bottom: 18px;
+    }
+    .inputForm{
+        padding: 8px;
+    }
+    .qrHolder {
+        flex-direction: column;
+    }
+    .settings{
+        transform: rotate(-90deg);
+        margin: -65px;
+    }
+    .settings:hover{
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        transform: scale(1.01) rotate(-90deg);;
+    }
+    .option{
+        transform: rotate(90deg);
+        height: 39px;
+        width: 39px;
+    }
+    .option-delete, .option-item{
+        height: 35px;
+        width: 35px;
+    }
+    .option-menu{
+        z-index: 10000;
+        width: 183px;
+        left: -9px;
+        top: 55px;
+        height: 156px;
+    }
+    .option:hover{
+        transform: scale(1.03)  rotate(90deg);
+    }
+    #sliderBtn{
+        position: static;
+    }
+    #slider{
+        height: 44px;
+        background-color: var(--softGray);
+        right: 49px;
+        top: 45px;
+    }
+    #deleteAll{
+        transform: rotate(90deg);
+    }
+    .saveBlock{
+        transform: rotate(90deg);
+        margin: -25px;
+
+    }
+    .save{
+        transform: rotate(-90deg);
+    }
+    .save:hover{
+        transform: scale(1.01)  rotate(-90deg);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+    .goDownSection{
+        display: none;
+    }
+    .infoSection{
+        font-size: 14px;
+    }
+    .infoCard{
+        padding: 10px 20px;
+        margin: 7px;
+    }
+    .infoCard h2{
+        font-size: 19px;
+    }
 }
