@@ -113,8 +113,16 @@ const changeColor = (color, id) => {
     }
     generateQr(currentData, currentType)
 }
+
+
 document.querySelectorAll('.option-item').forEach(btn => {
     btn.addEventListener("click", () => {
+        document.getElementById('logoMenu').style.pointerEvents = 'none';
+        document.body.focus()
+        setTimeout(() => {
+            document.getElementById('logoMenu').style.pointerEvents = 'all';
+           }, 1);
+
         changes += 1
         defaultSettings['ecLevel'] = 'H'
         defaultSettings['mSize'] = 0.2
