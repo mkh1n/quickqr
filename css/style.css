@@ -198,6 +198,8 @@ select{
 #logoBtn{
     background-color: unset;
     background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     background-image: url('../images/logos/github.png'); 
 }
 #logoBtn:focus  #logoMenu, 

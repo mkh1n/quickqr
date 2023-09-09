@@ -123,7 +123,6 @@ document.querySelectorAll('.option-item').forEach(btn => {
 
 const changeLogo = (image) => {
     hideMenu()
-    console.log(image)
     changes += 1
     defaultSettings['ecLevel'] = 'H'
     defaultSettings['mSize'] = 0.2
@@ -137,12 +136,18 @@ const changeLogo = (image) => {
 }
 function loadLogo(fileInput) {
     var file = fileInput.files[0];
-    const image = new Image(1000, 1000)
-    image.src = URL.createObjectURL(file) 
-    changeLogo(image)
-    generateQr(currentData, currentType)
+    var reader  = new FileReader();
+    reader.onloadend = function (e) {
+        const image = new Image(100, 100)
+        image.src = e.target.result 
+        changeLogo(image)
+        setTimeout(()=>generateQr(currentData, currentType), 0.1)
+        fileInput.value = "";
 
+    }
+    reader.readAsDataURL(file);
 }
+
 const hideMenu = () => {
     document.getElementById('logoBtn').blur()
     document.getElementById('logoImage').click()
