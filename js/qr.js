@@ -143,6 +143,8 @@ const loadLogo = (input) => {
         image.src = img 
         changeLogo(image)
     };
+    reader.readAsDataURL(input.files[0]);
+
 }
 
 const hideMenu = () => {
