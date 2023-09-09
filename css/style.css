@@ -198,7 +198,7 @@ select{
 #logoBtn{
     background-color: unset;
     background-size: contain;
-    background-image: url('../images/logos/telegram.png'); 
+    background-image: url('../images/logos/github.png'); 
 }
 #logoBtn:focus  #logoMenu, 
 #logoBtn:active  #logoMenu
@@ -206,6 +206,7 @@ select{
     opacity: 1;
     pointer-events:inherit;
 } 
+
 .option-menu::-webkit-scrollbar { width: 0; }
 #slider{
     display: flex;
@@ -237,12 +238,16 @@ select{
     opacity: 1;
     pointer-events:inherit;
 } 
-.option-item, .option-delete{
+.option-item, .option-delete, #addOwnLogoBtn{
     height: 45px;
     width: 45px;
     margin: 5px;
     transition: 0.2s;
     position: relative;
+    cursor: pointer;
+}
+.image-upload>input {
+    display: none;
 }
 #deleteLogo{
     display: none;

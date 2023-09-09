@@ -117,20 +117,29 @@ const changeColor = (color, id) => {
 
 document.querySelectorAll('.option-item').forEach(btn => {
     btn.addEventListener("click", () => {
-        hideMenu()
-        changes += 1
-        defaultSettings['ecLevel'] = 'H'
-        defaultSettings['mSize'] = 0.2
-        defaultSettings['mode'] = 4
-        defaultSettings['image'] = btn.children[0]
-        document.getElementById('logoBtn').style.backgroundImage = `url(${btn.children[0].src})`;
-        setTimeout(() => {
-            document.getElementById('deleteLogo').style.display = `block`;
-            }, 500);
-        generateQr(currentData, currentType)
+        changeLogo(btn.children[0])
     });
 });
 
+const changeLogo = (image) => {
+    hideMenu()
+    console.log(image)
+    changes += 1
+    defaultSettings['ecLevel'] = 'H'
+    defaultSettings['mSize'] = 0.2
+    defaultSettings['mode'] = 4
+    defaultSettings['image'] = image
+    document.getElementById('logoBtn').style.backgroundImage = `url(${image.src})`;
+    setTimeout(() => {
+        document.getElementById('deleteLogo').style.display = `block`;
+        }, 500);
+    generateQr(currentData, currentType)
+}
+const loadLogo = (value) => {
+    const image = new Image(100, 100)
+    image.src = value 
+    changeLogo(image)
+}
 const hideMenu = () => {
     document.getElementById('logoBtn').blur()
     document.getElementById('logoImage').click()
