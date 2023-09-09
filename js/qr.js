@@ -154,7 +154,7 @@ function loadLogo(fileInput) {
         const image = new Image(100, 100)
         image.src = e.target.result 
         changeLogo(image)
-        setTimeout(()=>generateQr(currentData, currentType), 0.1)
+        image.onloaded(()=>generateQr(currentData, currentType))
         fileInput.value = "";
 
     }
