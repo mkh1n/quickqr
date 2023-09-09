@@ -515,7 +515,7 @@ a:hover{
         height: 39px;
         width: 39px;
     }
-    .option-delete, .option-item{
+    .option-delete, .option-item, #addOwnLogoBtn{
         height: 35px;
         width: 35px;
     }
