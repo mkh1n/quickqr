@@ -131,7 +131,7 @@ select{
 }
 .settings{
     position: relative;
-    border-radius: 30px;
+    border-radius: 22px;
     padding: 8px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     height: min-content;
