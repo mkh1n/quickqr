@@ -32,8 +32,14 @@ const makeQr = (data) => {
     document.getElementById('myQRCode').firstChild.addEventListener('click', function () {
         copyElement()
     });    
-    var link = document.getElementById('myQRCode').firstChild.getAttribute('src')
     document.getElementById('savePngLink').setAttribute('href', link);
+    
+}
+const printQr = () => {
+    var link = document.getElementById('myQRCode').firstChild.getAttribute('src')
+    var frame = window.frames['imgFrame'];
+    frame.document.write(`<body onload="window.print()"><img class="img" src="${link}"></body>`);
+    frame.document.close();
 }
 const generateQr = (data, type) => {
     if (changes >= 1) {

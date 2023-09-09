@@ -317,7 +317,12 @@ select{
 #copyPng{
     background-image: url('../images/icons/copyIcon.png');
 }
-
+#printPng{
+    background-image: url('../images/icons/printer.png');
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 .save a img{
     height: 100%;
     width: 100%;
