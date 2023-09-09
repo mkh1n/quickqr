@@ -1,7 +1,8 @@
 :root{
-    --red: #e76f51;
-    --orange: #e63946;
-    --white: #f1faee;
+    --a: #ffb876;
+
+    --red: #e63946;
+    --white: #e2f3dd;
     --green: #a8dadc;
     --blue: #457b9d;
     --darkBlue: #1d3557;
@@ -15,6 +16,8 @@ body{
 }
 .main{
     margin: 0 140px;
+    margin-top: -10px;
+
     box-sizing:border-box;
 }
 .logoHolder{
@@ -40,7 +43,7 @@ body{
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.08s;
     margin: 5px 3px;
 }
 .controlButton:hover{
@@ -54,11 +57,11 @@ body{
     flex-direction: column;
     border-radius: 15px;
     margin-bottom: 20px;
-    margin-top: 10px;
+    margin-top: 0px;
     padding: 15px 20px;
     text-align: right;
     color: white;
-    background-color: var(--darkBlue)
+    background: var(--blue)
 
 }
 .banner h1{
@@ -369,12 +372,12 @@ select{
     opacity: 0;
     transition: 2s;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-
 }
 .alertAnimation{
     animation-duration: 2s;
     animation-name: slidein;
 }
+
 
 @keyframes slidein {
   0% {
@@ -408,20 +411,39 @@ select{
     color: white;
     margin: 10px;
 }
+.infoCard p{
+    margin: 0;
+}
 .infoCard h2{
-    margin: 0px 10px 10px 0px;
+    margin: 0px 0px 5px 0px;
 }
 .info1{
     color: black;
-    max-width: 200px;
+    max-width: 350px;
     background-color: var(--white);
 }
 .info2{
     color: black;
-
-    max-width: 400px;
-    background-color: var(--orange);
+    max-width: 250px;
+    background-color: var(--red);
 }
+.info3{
+    color: black;
+    max-width: 390px;
+    background-color: var(--a);
+}
+.donateCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+#donateButton{
+    transform: scale(0.9);
+    justify-self: center;
+    transition: 0.1s;
+}
+
 footer{
     display: flex;
     align-items: center;
@@ -432,8 +454,16 @@ footer{
     color: white;
     font-weight: 300;
 }
+.info3 a{
+    color:  #9012ff;
+
+}
  a{
-    color: var(--red)
+    color: var(--a);
+    transition: 0.1s;
+}
+a:hover{
+    color: #9dfe9b
 }
 @media screen and (max-width: 700px) {
     .main{
@@ -443,6 +473,8 @@ footer{
 @media screen and (max-width: 500px) {
     .main {
         margin: 0 11px;
+        margin-top: -12px;
+
     }
     .banner{
         height: 79px;
@@ -515,10 +547,12 @@ footer{
     }
     .saveBlock{
         transform: rotate(90deg);
-        margin: -25px;
+        margin: -50px;
 
     }
     .save{
+        width: 20px;
+        height: 20px;
         transform: rotate(-90deg);
     }
     .save:hover{
@@ -537,5 +571,13 @@ footer{
     }
     .infoCard h2{
         font-size: 19px;
+    }
+    .info1, .info2, .info3, .infoCard{
+        max-width: unset;
+    }
+    #donateButton{
+        transform: scale(0.9);
+
+        margin: 7px auto;
     }
 }

@@ -32,6 +32,8 @@ const makeQr = (data) => {
     document.getElementById('myQRCode').firstChild.addEventListener('click', function () {
         copyElement()
     });    
+    var link = document.getElementById('myQRCode').firstChild.getAttribute('src')
+
     document.getElementById('savePngLink').setAttribute('href', link);
     
 }
@@ -90,14 +92,12 @@ const generateQr = (data, type) => {
             var encryption = document.querySelectorAll('select[type=encryption]')[0].value == 'No encryption' ? 'nopass' : document.querySelectorAll('select[type=encryption]')[0].value.split('/')[0]
            
             data = !networkName ? currentData : `WIFI:T:${encryption};S:${networkName};P:${password};;`
-            console.log(data)
             makeQr(data)
         break;
 }
 }
 const changeType = (type) => {
     currentType = type;
-    console.log(type + 'Form')
     typeList.forEach((el) => {
         document.getElementById(el + 'Form').style.display = 'none'
         document.getElementById(el + 'Form').reset()
@@ -106,7 +106,7 @@ const changeType = (type) => {
         document.getElementById(el).style.outline = 'none'
     })
     document.getElementById(type + 'Form').style.display = 'block'
-    document.getElementById(type).style.outline = '2px solid var(--orange)'
+    document.getElementById(type).style.outline = '2px solid var(--red)'
 }
 const changeRadius = (radius) => {
     changes += 1
@@ -153,10 +153,13 @@ function loadLogo(fileInput) {
     reader.onloadend = function (e) {
         const image = new Image(100, 100)
         image.src = e.target.result 
-        changeLogo(image)
-        image.onloaded(()=>generateQr(currentData, currentType))
+        
+        setTimeout(() => {
+            changeLogo(image)
+            generateQr(currentData, currentType);
+            }, 200);
+      
         fileInput.value = "";
-
     }
     reader.readAsDataURL(file);
 }
@@ -217,7 +220,7 @@ async function copyElement() {
 
 
 
-document.getElementById('url').style.outline = '2px solid var(--orange)'
+document.getElementById('url').style.outline = '2px solid var(--red)'
 document.getElementById('urlForm').style.display = 'block'
 generateQr(currentData, currentType)
 
