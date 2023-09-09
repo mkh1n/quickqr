@@ -136,18 +136,13 @@ const changeLogo = (image) => {
     generateQr(currentData, currentType)
 }
 const loadLogo = (input) => {
-    console.log(input.files[0])
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            const img = e.target.result;
-            const image = new Image(100, 100)
-            image.src = img 
-            changeLogo(image)
-        };
-        reader.readAsDataURL(input.files[0]);
-      }
-    
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        const img = e.target.result;
+        const image = new Image(100, 100)
+        image.src = img 
+        changeLogo(image)
+    };
 }
 
 const hideMenu = () => {
