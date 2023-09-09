@@ -94,6 +94,9 @@ const changeType = (type) => {
     console.log(type + 'Form')
     typeList.forEach((el) => {
         document.getElementById(el + 'Form').style.display = 'none'
+        document.getElementById(el + 'Form').reset()
+        generateQr(currentData, currentType)
+
         document.getElementById(el).style.outline = 'none'
     })
     document.getElementById(type + 'Form').style.display = 'block'
@@ -113,7 +116,11 @@ const changeColor = (color, id) => {
     }
     generateQr(currentData, currentType)
 }
+const reset = (type) => {
+    document.querySelectorAll(`input[type=${type}]`)[0].value=""
+    generateQr(currentData, currentType)
 
+}
 
 document.querySelectorAll('.option-item').forEach(btn => {
     btn.addEventListener("click", () => {

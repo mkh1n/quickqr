@@ -248,6 +248,10 @@ select{
     position: relative;
     cursor: pointer;
 }
+#addOwnLogoBtn{
+    height: 43px;
+    width: 43px;
+}
 .image-upload>input {
     display: none;
 }

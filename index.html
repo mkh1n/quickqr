@@ -42,81 +42,81 @@
             <form class='formHolder' id="urlForm">
                 <div class="inputBlock">
                     <input class="inputForm" type="url" placeholder="https://">
-                    <button class="clear" type="reset">
+                    <div class="clear" onclick="reset('url')">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
-                    </button>
+                    </div>
                 </div>
             </form>
             <form class='formHolder ' id="textForm">
                 <div class="inputBlock">
                     <input class="inputForm" type="text" placeholder="Text">
-                    <button class="clear" type="reset">
+                    <div class="clear" onclick="reset('text')">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
-                    </button>
+                    </div>
                 </div>
             </form>
             <form class='formHolder ' id="smsForm">
                 <div class="inputBlock">
                     <input class="inputForm" type="smsNumber" placeholder="+1 234 567 8910">
-                    <button class="clear" type="reset">
+                    <div class="clear" onclick="reset('smsNumber')">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
-                    </button>
+                    </div>
                 </div>
                 <div class="inputBlock">
                     <input class="inputForm" type="smsMessage" placeholder="Message">
-                    <button class="clear" type="reset">
+                    <div class="clear" onclick="reset('smsMessage')">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
-                    </button>
+                    </div>
                 </div>
             </form>
             <form class='formHolder' id="mailForm">
                 <div class="inputBlock">
                     <input class="inputForm" type="mail" placeholder="example@gmail.com">
-                    <button class="clear" type="reset">
+                    <div class="clear" onclick="reset('mail')">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
-                    </button>
+                    </div>
                 </div>
                 <div class="inputBlock">
                     <input class="inputForm" type="mailSubject" placeholder="Subject">
-                    <button class="clear" type="reset">
+                    <div class="clear" onclick="reset('mailSubject')">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
-                    </button>
+                    </div>
                 </div>
                 <div class="inputBlock">
                     <input class="inputForm" type="mailMessage" placeholder="Message">
-                    <button class="clear" type="reset">
+                    <div class="clear" onclick="reset('mailMessage')">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
-                    </button>
+                    </div>
                 </div>
             </form>
             <form class='formHolder' id="phoneForm">
                 <div class="inputBlock">
                     <input class="inputForm" type="phone" placeholder="+1 234 567 8910">
-                    <button class="clear" type="reset">
+                    <div class="clear" onclick="reset('phone')">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
-                    </button>
+                    </div>
                 </div>
             </form>
             <form class='formHolder' id="mapsForm">
                 <div class="inputBlock">
                     <input class="inputForm" type="maps" placeholder="40.71872, -73.98905">
-                    <button class="clear" type="reset">
+                    <div class="clear" onclick="reset('maps')">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
-                    </button>
+                    </div>
                 </div>
             </form>
             <form class='formHolder' id="wi-fiForm">
                 <div class="inputBlock">
                     <input class="inputForm" type="networkName" placeholder="Network Name">
-                    <button class="clear" type="reset">
+                    <div class="clear" onclick="reset('networkName')">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
-                    </button>
+                    </div>
                 </div>
                 <div class="inputBlock">
                     <input class="inputForm" type="password" placeholder="Password">
-                    <button class="clear" type="reset">
+                    <div class="clear" onclick="reset('password')">
                         <img src="https://www.svgrepo.com/show/520676/cross.svg" alt="">
-                    </button>
+                    </div>
                 </div>
                 <select class="inputForm" type="encryption" oninput="generateQr(this.value, currentType)">
                     <option class="">No encryption</option>
@@ -134,10 +134,10 @@
                         </div>
                         <div class="image-upload">
                             <label for="logo-input">
-                              <img id='addOwnLogoBtn'src="images/icons/plus.png"/>
+                                <img id='addOwnLogoBtn' src="images/icons/plus.png" />
                             </label>
-                            <input id="logo-input" type="file" oninput="loadLogo(this)" accept="image/*"/>
-                          </div>
+                            <input id="logo-input" type="file" oninput="loadLogo(this)" accept="image/*" />
+                        </div>
                         <div class="option-item">
                             <img src="images/logos/instagram.png" id='test' alt="">
                         </div>
@@ -206,7 +206,8 @@
                     </div>
                 </div>
                 <div class="option" id="sliderBtn" href="javascript:void(0);" tabindex="1">
-                    <div id="slider"><input type="range" min="0" max="50" value="0" onchange="changeRadius(this.value); hideMenu()">
+                    <div id="slider"><input type="range" min="0" max="50" value="0"
+                            onchange="changeRadius(this.value); hideMenu()">
                     </div>
 
                 </div>
@@ -252,7 +253,9 @@
         </section>
 
     </div>
-    <footer><p>Made with ♥️ by <a href="https://github.com/mkh1n/qr-cat" target="_blank"> mkh1n</a></p></footer>
+    <footer>
+        <p>Made with ♥️ by <a href="https://github.com/mkh1n/qr-cat" target="_blank"> mkh1n</a></p>
+    </footer>
 </body>
 <div>
 </div>
@@ -260,4 +263,5 @@
 <script src="js/jquery-qrcode.js"></script>
 <script src="js/qr.js"></script>
 <script src="js/scroll.js"></script>
+
 </html>
