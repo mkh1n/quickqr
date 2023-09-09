@@ -154,7 +154,7 @@ const deleteLogo = () => {
     defaultSettings['mode'] = 4
     defaultSettings['ecLevel'] = `L`;
     document.getElementById('deleteLogo').style.display = `none`;
-    document.getElementById('logoBtn').style.backgroundImage = "url(images/logos/telegram.png)";
+    document.getElementById('logoBtn').style.backgroundImage = "url(images/logos/github.png)";
     generateQr(currentData, currentType)
 }
 const showDeleteAllBtn = () => {
