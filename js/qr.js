@@ -135,18 +135,12 @@ const changeLogo = (image) => {
         }, 500);
     generateQr(currentData, currentType)
 }
-const loadLogo = (input) => {
-    var reader = new FileReader();
-    reader.onload = function (e) {
-        const img = e.target.result;
-        const image = new Image(100, 100)
-        image.src = img 
-        changeLogo(image)
-    };
-    reader.readAsDataURL(input.files[0]);
-
+function loadLogo(fileInput) {
+    var file = fileInput.files[0];
+    const image = new Image(1000, 1000)
+    image.src = URL.createObjectURL(file) 
+    changeLogo(image)
 }
-
 const hideMenu = () => {
     document.getElementById('logoBtn').blur()
     document.getElementById('logoImage').click()
