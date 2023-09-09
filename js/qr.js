@@ -140,6 +140,8 @@ function loadLogo(fileInput) {
     const image = new Image(1000, 1000)
     image.src = URL.createObjectURL(file) 
     changeLogo(image)
+    generateQr(currentData, currentType)
+
 }
 const hideMenu = () => {
     document.getElementById('logoBtn').blur()
