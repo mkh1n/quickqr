@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuickQr - free QR code generator with customization and custom logos</title>
-    <meta name="description" content="Create your own QR code with a logo, change the color and design details. You can download, copy or print the finished QR code.">
-    <meta name="keywords" content="qr code generator, qr code creation, qr code creator, qr code generator, qr code creator, qr code, qr code with logo, free qr codes, free qr code generator, qr code printing, download qr code, your qr logocode">
+    <meta name="description"
+        content="Create your own QR code with a logo, change the color and design details. You can download, copy or print the finished QR code.">
+    <meta name="keywords"
+        content="qr code generator, qr code creation, qr code creator, qr code generator, qr code creator, qr code, qr code with logo, free qr codes, free qr code generator, qr code printing, download qr code, your qr logocode">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,23 +18,32 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
     <link rel="manifest" href="images/favicon/site.webmanifest">
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-    
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
         ym(94888837, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true
         });
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/94888837" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/94888837" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+
+    <!-- Yandex.RTB -->
+    <script>window.yaContextCb = window.yaContextCb || []</script>
+    <script src="https://yandex.ru/ads/system/context.js" async></script>
+
 </head>
 <iframe name="imgFrame" style="width: 0; height: 0; border: 0;"></iframe>
+
 <body>
     <div class="main">
 
@@ -253,36 +264,40 @@
         <div class="goDownSection">
             <a class="goDownBtn" href="#info"></a>
         </div>
+        <!-- Yandex.RTB R-A-11274909-1 -->
+        <script>
+            window.yaContextCb.push(() => {
+                Ya.Context.AdvManager.render({
+                    "blockId": "R-A-11274909-1",
+                    "type": "floorAd",
+                    "platform": "touch"
+                })
+            })
+        </script>
         <section class="infoSection" id="info">
             <div class="infoCard info2">
                 <h2>Your Design</h2>
-                <p>You choose the design yourself, you can change the pixel smoothing radius, logo, background color and fill.</p>
+                <p>You choose the design yourself, you can change the pixel smoothing radius, logo, background color and
+                    fill.</p>
             </div>
             <div class="infoCard info1">
                 <h2>Logos</h2>
                 <p>
-                    Add your own logo to QR code for convenient sending to your friends and colleagues, you can also copy or
+                    Add your own logo to QR code for convenient sending to your friends and colleagues, you can also
+                    copy or
                     download the QR code in high quality.
                 </p>
             </div>
-            
+
             <div class="infoCard">
                 <h2>Appreciate</h2>
                 <p>This site uses the jquery plugin <a href="https://github.com/lrsjng/jquery-qrcode"
-                    target="_blank">jquery-qrcode</a>, many thanks to the authors of this project for the free
-                opportunity to generate QR codes with such ease.</p>
-               
-            </div>
-            <section class="donateCard">
-            <div class="infoCard info3">
-                <h2>Support</h2>
-                <p>If you enjoyed using this service, I would be very glad if you supported me financially on button below.      
-                    You can also put a star on this project on <a href="https://github.com/mkh1n/qr-cat" target="_blank"> github</a></p>
-            </div>
-            <iframe id='donateButton' src="https://yoomoney.ru/quickpay/fundraise/button?billNumber=SvQFBQORAeU.230909&" width="330" height="50" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+                        target="_blank">jquery-qrcode</a>, many thanks to the authors of this project for the free
+                    opportunity to generate QR codes with such ease.</p>
 
-            </section>
-             </section>
+            </div>
+
+        </section>
     </div>
     <footer>
         <p>Made with ♥️ by <a href="https://github.com/mkh1n/qr-cat" target="_blank"> mkh1n</a></p>
